@@ -11,6 +11,11 @@ namespace Inspection.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //modelBuilder.Entity<Models.Inspection>(entity =>
+            //{
+            //    entity.HasOne<Models.InspectionType>().WithMany(p => p.Inspections).HasForeignKey(p => p.InspectionTypeId);
+            //});
+
             base.OnModelCreating(modelBuilder);
         }
 

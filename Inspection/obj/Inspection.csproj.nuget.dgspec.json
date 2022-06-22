@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\Inspection.csproj": {}
+    "F:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\Inspection.csproj": {}
   },
   "projects": {
-    "G:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\Inspection.csproj": {
+    "F:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\Inspection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\Inspection.csproj",
+        "projectUniqueName": "F:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\Inspection.csproj",
         "projectName": "Inspection",
-        "projectPath": "G:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\Inspection.csproj",
-        "packagesPath": "C:\\Users\\Mahmoud Sharif\\.nuget\\packages\\",
-        "outputPath": "G:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\obj\\",
+        "projectPath": "F:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\Inspection.csproj",
+        "packagesPath": "C:\\Users\\shari\\.nuget\\packages\\",
+        "outputPath": "F:\\Tutorials_Projects\\Inspection-CRUD\\Inspection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mahmoud Sharif\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Users\\shari\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -42,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[6.0.6, )"
@@ -93,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Inspection.Models
 {
@@ -10,6 +11,7 @@ namespace Inspection.Models
         [StringLength(200)]
         public string Comments { get; set; }
         public int InspectionTypeId { get; set; }
-        public InspectionType? InspectionType { get; set; }
+        [ForeignKey("InspectionTypeId")]
+        public virtual InspectionType InspectionType { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Inspection.Data;
+using AutoMapper;
 
 namespace Inspection.Controllers
 {
@@ -9,31 +10,34 @@ namespace Inspection.Controllers
     public class InspectionsController : ControllerBase
     {
         private readonly DataContext _context;
+        public readonly IMapper _mapper;
 
-        public InspectionsController(DataContext context)
+        public InspectionsController(DataContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Inspections
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Models.Inspection>>> Getinspections()
+        public async Task<ActionResult<IEnumerable<DTO.InspectionDTO>>> Getinspections()
         {
-          if (_context.inspections == null)
-          {
-              return NotFound();
-          }
-            return await _context.inspections.ToListAsync();
+            if (_context.inspections == null)
+            {
+                return NotFound();
+            }
+            var result = await _context.inspections.Include(a => a.InspectionType).ToListAsync();
+            return Ok(_mapper.Map<IEnumerable<Models.Inspection>, IEnumerable<DTO.InspectionDTO>>(result));
         }
 
         // GET: api/Inspections/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Models.Inspection>> GetInspection(int id)
         {
-          if (_context.inspections == null)
-          {
-              return NotFound();
-          }
+            if (_context.inspections == null)
+            {
+                return NotFound();
+            }
             var inspection = await _context.inspections.FindAsync(id);
 
             if (inspection == null)
@@ -80,10 +84,10 @@ namespace Inspection.Controllers
         [HttpPost]
         public async Task<ActionResult<Models.Inspection>> PostInspection(Models.Inspection inspection)
         {
-          if (_context.inspections == null)
-          {
-              return Problem("Entity set 'DataContext.inspections'  is null.");
-          }
+            if (_context.inspections == null)
+            {
+                return Problem("Entity set 'DataContext.inspections'  is null.");
+            }
             _context.inspections.Add(inspection);
             await _context.SaveChangesAsync();
 

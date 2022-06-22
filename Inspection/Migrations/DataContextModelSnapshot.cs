@@ -88,17 +88,12 @@ namespace Inspection.Migrations
             modelBuilder.Entity("Inspection.Models.Inspection", b =>
                 {
                     b.HasOne("Inspection.Models.InspectionType", "InspectionType")
-                        .WithMany("Inspections")
+                        .WithMany()
                         .HasForeignKey("InspectionTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("InspectionType");
-                });
-
-            modelBuilder.Entity("Inspection.Models.InspectionType", b =>
-                {
-                    b.Navigation("Inspections");
                 });
 #pragma warning restore 612, 618
         }
